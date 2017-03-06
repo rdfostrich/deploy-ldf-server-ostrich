@@ -1,5 +1,6 @@
 {
   "title": "Linked Data Fragments server with versioning extension",
+  "baseURL": "http://versioned.linkeddatafragments.org/",
   "datasources": {
     "bear": {
       "title": "Versioned BEAR dataset",
