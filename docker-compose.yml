@@ -1,0 +1,37 @@
+version: '2'
+services:
+    server:
+        image: ldf-ostrich
+        ports:
+        - "55544:3000"
+        volumes:
+        - ${DATA_DIR}:/data
+        - ./config-server.json:/tmp/config.json
+        command: /tmp/config.json 3000 ${LDF_WORKERS}
+        networks:
+            main:
+                ipv4_address: 172.16.238.10
+#    server-cache:
+#        image: nginx:stable
+#        privileged: true
+#        ports:
+#        - "55545:80"
+#        volumes:
+#        - ./nginx-default:/etc/nginx/sites-enabled/default:ro
+#        - ./nginx.conf:/etc/nginx/nginx.conf:ro
+#        - ./tmp-cache:/tmp/cache/nginx
+#        - ./tmp-nginx:/tmp/nginx
+#        - ./logs:/data/log/nginx
+#        links:
+#        - server
+#        networks:
+#            main:
+#                ipv4_address: 172.16.238.11
+
+networks:
+    main:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+            - subnet: 172.16.238.0/24

@@ -1,0 +1,11 @@
+{
+  "title": "Linked Data Fragments server with versioning extension",
+  "datasources": {
+    "bear": {
+      "title": "Versioned BEAR dataset",
+      "type": "OstrichDatasource",
+      "description": "First 10 versions of the BEAR dataset with an OSTRICH back-end",
+      "settings": { "path": "/data/bear.ostrich" }
+    }
+  }
+}
