@@ -3,12 +3,12 @@ proxy_cache_path /tmp/cache/nginx levels=1:2 keys_zone=fragments-cache:100m max_
 proxy_temp_path /tmp/nginx; 
 
 upstream fragments-node { 
-    server server:55544;
+    server server:3000;
 } 
 
 server { 
     listen 80 default_server;
-    server_name server; 
+    server_name versioned.linkeddatafragments.org; 
 
     if ($request_method !~ ^(GET|HEAD|OPTIONS)$) { 
         return 405; 
@@ -29,7 +29,7 @@ server {
         proxy_cache_key "$request_uri"; 
         proxy_cache_valid 200 404 60m; 
         proxy_cache_bypass $arg_nocache $http_pragma; 
-    } 
+    }
 
     location /logs { 
         alias /data/log/nginx/public; 
