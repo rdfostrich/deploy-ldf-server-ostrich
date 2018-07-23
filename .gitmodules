@@ -1,6 +1,6 @@
 [submodule "server"]
 	path = server
-	url = ssh://git@git.datasciencelab.ugent.be:4444/linked-data-fragments/server.git
+    url = git@github.com:LinkedDataFragments/Server.js.git
 [submodule "Ostrich-Node"]
-	path = Ostrich-Node
-	url = ssh://git@git.datasciencelab.ugent.be:4444/linked-data-fragments/Ostrich-Node.git
+    path = Ostrich-Node
+    url = git@github.com:rdfostrich/ostrich-node.git
